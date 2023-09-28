@@ -17,25 +17,19 @@ class Dice_roller:
             except ValueError as err:
                 print(err)
 
-    #Rolls all dice to return final value
-    def roll(self):
+    #Rolls all dice to return array of all rolls
+    def roll(self, num_dice):
         min_val = 1
         max_val = 6
         roll_again = 'y'
         total = 0
-    
-        num_dice = self.num_die()
-    
-    
+        dice_rolls = []
+
         print("Rolling dice")
         for i in range(num_dice):
             die_num = random.randint(min_val, max_val)
             total += die_num
-            print(f"Die: {i+1}: {die_num}")
+            dice_rolls.append(die_num)
+            
     
-        print(f"Total: {total}")
-
-#Main
-if __name__ == '__main__':
-    dice_roller = Dice_roller()
-    dice_roller.roll()
+        return dice_rolls
