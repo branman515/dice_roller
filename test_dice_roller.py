@@ -13,6 +13,11 @@ class Testing(unittest.TestCase):
         test_dice = DiceRoller.Dice_roller()
         with mock.patch.object(builtins, 'input', lambda _: '2'):
             assert test_dice.num_die() == 2
+            
+    def test_roll_dice(self):
+        test_dice = DiceRoller.Dice_roller()
+        dice_array = test_dice.roll(2)
+        assert len(dice_array) == 2
 
 
 if __name__ == '__main__':
